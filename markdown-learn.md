@@ -107,4 +107,47 @@ First Header | Second Header
 ------------ | -------------
 Content cell 1 | Content cell 2  
 Content column 1 | Content column 2   
-  
+
+# Other Pages
+https://help.github.com/articles/basic-writing-and-formatting-syntax/
+
+# Quoting text（引用文本）
+You can quote text with a `>`.
+
+In the words of Abraham Lincoln:
+> Pardon my French
+
+# Quoting code（引用代码）
+
+You can call out code or a command within a sentence with single cackitcks. The text within the backticks will not be formatted.
+
+use `git status` to list all new or modified files that haven't yet been committed.
+
+To format code or text into its own distinct block, use triple backticks.
+
+Some basic Git commands are:
+```
+git status
+git add
+git commit
+```
+
+# Links（链接）
+
+You can create an inline link by wrapping link text in bracket `[ ]`, and then wrapping the URL in parentheses `( )`. You can also use the keyboard shortcut `command + k` to create a link.
+
+This site was built using [Github Pages](https://pages.github.com/).
+
+# Relative links（相关链接）
+（可以链接文件）
+[contribution guideline for this project](docs/CONTRIBUTING.md)
+
+# Lists（列表）
+
+You can make a list by preceding one or more lines of text with `-` or `*`.
+
+# Nested Lists（嵌套列表）
+
+1. First list item in first line.
+   - First nested list item 
+     - Second nested list item 
