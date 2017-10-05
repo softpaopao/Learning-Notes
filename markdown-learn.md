@@ -1,6 +1,6 @@
 Markdown 语法练习
 ----
-https://guides.github.com/features/mastering-markdown
+----
 
 ## HEADERS（标题）
 
@@ -114,8 +114,9 @@ First Header | Second Header
 Content cell 1 | Content cell 2  
 Content column 1 | Content column 2   
 
+----
+
 ## Other Pages
-https://help.github.com/articles/basic-writing-and-formatting-syntax/
 
 ## Quoting text（引用文本）
 You can quote text with a `>`.
@@ -157,3 +158,9 @@ You can make a list by preceding one or more lines of text with `-` or `*`.
 1. First list item in first line.
    - First nested list item 
      - Second nested list item 
+
+----
+
+参考链接：
+* https://guides.github.com/features/mastering-markdown
+* https://help.github.com/articles/basic-writing-and-formatting-syntax/
