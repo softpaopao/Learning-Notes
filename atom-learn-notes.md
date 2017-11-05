@@ -23,7 +23,7 @@ Atom 使用了最新版本的 Chromium 的变种，用来对页面进行本地�
 * `Alt+\` > 在工作窗口与目录树之间，切换聚焦。在目录树窗口下，可以使用 `A` , `M` , `Delete` 进行创建，移动，删除文件。
 * 使用 `Ctrl+T` 或 `Ctrl+P` ，快速搜索并打开项目内的文件。
 
-# 第二章：使用Atom
+# 第二章：使用 Atom
 
 ## Atom Packages
 
@@ -62,8 +62,8 @@ Atom 使用了最新版本的 Chromium 的变种，用来对页面进行本地�
   * `Ctrl+J` > 将下一行移动到当前行末
   * `Ctrl+Up/Down` > 向上或向下移动当前行
   * `Ctrl+Shift+D` > 重复当前行
-  * `Ctrl+K Ctrl+U` > 大写光标所在单词
-  * `Ctrl+K Ctrl+L` > 小写光标所在单词
+  * `Ctrl+K` `Ctrl+U` > 大写光标所在单词
+  * `Ctrl+K` `Ctrl+L` > 小写光标所在单词
 
 * Deleting and Cutting
   * `Ctrl+Shift+K` > 删除当前光标所在行
