@@ -1,5 +1,13 @@
 Systemed--学习笔记
 ----
+----
+参考文章：
+
+阮一峰：[《systemd入门指南》](http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html)
+
+[ArchWiki：Systemd](https://wiki.archlinux.org/index.php/systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+
+----
 ## Systemed 主要用途：分析系统状态
 * systemctl status > 显示系统状态
 * systemctl
@@ -193,31 +201,30 @@ Systemd 目标
 Exextart=/-bin ....
 空值，则为取消上一行设置，“-” 抑制错误，即使不存在，也不会错误。
 
-[Service]
 * Type=
-  * simple:ExecStart （默认值）启动为主进程
-  * forking:ExecStart 以 fork（）启动，父进程退出，子进程转主进程
-  * oneshot:类似simple 但只执行一次 > systemd 启动其它
-  * dbus:类似simple D-Bus 信号后启动
-  * notify:类似simple 启动结束后发出通知 > systemd 启动其它
-  * idle:类似simple 其他结束，再启动
+  * simple > （默认值）启动为主进程
+  * forking > ExecStart 以 fork（）启动，父进程退出，子进程转主进程
+  * oneshot > 类似simple 但只执行一次 > systemd 启动其它
+  * dbus > 类似simple D-Bus 信号后启动
+  * notify > 类似simple 启动结束后发出通知 > systemd 启动其它
+  * idle > 类似simple 其他结束，再启动
 
 * KillMode
-  * control-group （默认值），当前进程内所有子进程
-  * process 只杀死主进程
+  * control-group >（默认值），当前进程内所有子进程
+  * process > 只杀死主进程
   * mixed
-  * none 不杀死进程，仅执行 stop 命令
+  * none > 不杀死进程，仅执行 stop 命令
 
 * Restart
-  * no （默认值），不重启
-  * on-success 正常退出，才启动
-  * on-failure 非正常退出，才启动（stop 后不会重启，终止，超时）
-  * on-abnormal 仅信号终止，超时
-  * on-abort 仅在没有捕捉到信号终止时
-  * on-watching 仅超时
-  * always 总重启
+  * no >（默认值），不重启
+  * on-success > 正常退出，才启动
+  * on-failure > 非正常退出，才启动（stop 后不会重启，终止，超时）
+  * on-abnormal > 仅信号终止，超时
+  * on-abort > 仅在没有捕捉到信号终止时
+  * on-watching > 仅超时
+  * always > 总重启
 
-* Restart Sec 重启前等待秒数
+* Restart Sec > 重启前等待秒数
 
 [Install]
-* WanteBy 该服务所在的 target
+* WanteBy > 该服务所在的 target
