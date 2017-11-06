@@ -111,51 +111,51 @@ Systemd 目标
 ## 相关命令
 
 * systemd-analyze 查看启动耗时
-      * blame 每个服务的启动耗时
-      * critical-chain 瀑布状的启动耗时
-      * critical-chain atd.service 制定服务的启动流
+  * blame 每个服务的启动耗时
+  * critical-chain 瀑布状的启动耗时
+  * critical-chain atd.service 制定服务的启动流
 
 
 * hotnamectl 显示当前主机信息
-      * sudo hostnamectl set-hostname softpaopao 设置主机名
+  * sudo hostnamectl set-hostname softpaopao 设置主机名
 
 
 * loginctl 查看当前登陆用户
-      * loginctl list-session
-      * loginctl list-user
-      * loginctl show-user
+  * loginctl list-session
+  * loginctl list-user
+  * loginctl show-user
 
 
 * timectl 查看当前时区
-      * timectl set-timezone ...
-      * timectl set-time YYYY-MM-DD
-      * timectl set-time HH:MM:SS
-      * timectl list-timezone
+  * timectl set-timezone ...
+  * timectl set-time YYYY-MM-DD
+  * timectl set-time HH:MM:SS
+  * timectl list-timezone
 
 
 * systemctl list-units
-      * --all 列出所有，包括启动失败
-      * --all --state=inactive 没有运行的
-      * --faild 加载失败的
-      * --type=service 类型为 service 的 units
+  * --all 列出所有，包括启动失败
+  * --all --state=inactive 没有运行的
+  * --faild 加载失败的
+  * --type=service 类型为 service 的 units
 
 
 * systemctl status 查看系统状态和单元状态
-      * is-active
-      * is-failed
-      * is-enable
-      * -H pi@ip status http.service 远程主机的某个服务
+  * is-active
+  * is-failed
+  * is-enable
+  * -H pi@ip status http.service 远程主机的某个服务
 
 
 * systemctl list-dependenices 列出一个 unit 的依赖
-      * -all 展开 target
+  * -all 展开 target
 
 
 * unit
-      * /etc/systemd/system  --> /usr/lib/systemd/system （真正的存放目录）
-      * sudo systemctl enable ssh.service 
+  * /etc/systemd/system  --> /usr/lib/systemd/system （真正的存放目录）
+  * sudo systemctl enable ssh.service 
       相当于： 
-      sudo ln -s '/usr/lib/systemd/system/ssh.service' '/etc/systemd/system/ssh.service'
+  sudo ln -s '/usr/lib/systemd/system/ssh.service'/etc/systemd/system/ssh.service'
 
 
 * systemctl list-unit-files 列出所有（配置文件）
@@ -192,3 +192,32 @@ Systemd 目标
 
 Exextart=/-bin ....
 空值，则为取消上一行设置，“-” 抑制错误，即使不存在，也不会错误。
+
+[Service]
+* Type=
+  * simple:ExecStart （默认值）启动为主进程
+  * forking:ExecStart 以 fork（）启动，父进程退出，子进程转主进程
+  * oneshot:类似simple 但只执行一次 > systemd 启动其它
+  * dbus:类似simple D-Bus 信号后启动
+  * notify:类似simple 启动结束后发出通知 > systemd 启动其它
+  * idle:类似simple 其他结束，再启动
+
+* KillMode
+  * control-group （默认值），当前进程内所有子进程
+  * process 只杀死主进程
+  * mixed
+  * none 不杀死进程，仅执行 stop 命令
+
+* Restart
+  * no （默认值），不重启
+  * on-success 正常退出，才启动
+  * on-failure 非正常退出，才启动（stop 后不会重启，终止，超时）
+  * on-abnormal 仅信号终止，超时
+  * on-abort 仅在没有捕捉到信号终止时
+  * on-watching 仅超时
+  * always 总重启
+
+* Restart Sec 重启前等待秒数
+
+[Install]
+* WanteBy 该服务所在的 target
