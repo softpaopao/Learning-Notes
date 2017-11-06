@@ -1,13 +1,6 @@
 Systemed--学习笔记
 ----
-----
-参考文章：
 
-阮一峰：[《systemd入门指南》](http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html)
-
-[ArchWiki：Systemd](https://wiki.archlinux.org/index.php/systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
-
-----
 ## Systemed 主要用途：分析系统状态
 * systemctl status > 显示系统状态
 * systemctl
@@ -228,3 +221,12 @@ Exextart=/-bin ....
 
 [Install]
 * WanteBy > 该服务所在的 target
+
+----
+参考文章：
+
+阮一峰：[《systemd入门指南》](http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html)
+
+[ArchWiki：Systemd](https://wiki.archlinux.org/index.php/Systemd)
+
+----
