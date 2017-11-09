@@ -1,4 +1,4 @@
-Kindle-Mylppings
+Kindle-Myclppings
 ----
 # 白说 (白岩松)
 
