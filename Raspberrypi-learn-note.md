@@ -30,7 +30,10 @@
    * systemctl enable xrdp
 * 使用中文界面
   * 安装中文字体包，如：tty-wqy-zenhei
-  
+  
+* 无密码ssh登录
+  * 生成公钥和私钥
+  * cat id_rsa.pub >> ~/.ssh/authorized_keys（也就是SSH客户端使用私钥，服务端使用公钥）
 ----
 参考文章：
 [《树莓派入门指南》](https://sspai.com/post/38542)
